@@ -1,0 +1,32 @@
+.beer-item {
+  flex-basis: calc(50% - 1rem);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.beer-item:last-child {
+  flex-basis: 100%;
+}
+
+.beer-item__image {
+  height: 10rem;
+  object-fit: contain;
+}
+
+@media (min-width: 700px) {
+  .beer-item {
+    flex-basis: calc(30% - 1rem);
+  }
+
+  .beer-item:nth-child(4) {
+    flex-basis: 45%;
+  }
+  .beer-item:nth-child(5) {
+    flex-basis: 45%;
+  }
+}

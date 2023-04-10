@@ -1,0 +1,16 @@
+ion-backdrop {
+  opacity: 0.4;
+  background: var(black);
+}
+
+#box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 100;
+  width: 90%;
+  height: fit-content;
+  overflow: scroll;
+  border-radius: 10px;
+}
