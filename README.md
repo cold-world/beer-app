@@ -16,8 +16,9 @@ Features ->
 * * *
 ### [Demo](https://cold-world.github.io/beer-app/)
 
-![Alt Text](https://i.ibb.co/fMfDKyC/localhost-5173-page-1-Pixel-5.png)
-![Alt Text](https://i.ibb.co/DKzcWQx/localhost-5173-page-1-Pixel-5-1.png)
+![Alt Text](https://i.ibb.co/74GMmpQ/2.gif)
+![Alt Text](https://i.ibb.co/3S8Gm4X/Screenshot-2023-04-11-183641.jpg)
+![Alt Text](https://i.ibb.co/z5HzzTT/Screenshot-2023-04-11-183545.jpg)
 
 * * *
 

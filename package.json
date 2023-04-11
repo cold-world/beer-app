@@ -1,12 +1,15 @@
 {
   "name": "beer-app",
   "private": true,
+  "homepage": "https://cold-world.github.io/beer-app",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@capacitor/android": "^4.7.3",
@@ -14,6 +17,7 @@
     "@ionic/react": "^7.0.1",
     "@ionic/storage": "^3.0.6",
     "cordova-sqlite-storage": "^6.1.0",
+    "gh-pages": "^5.0.0",
     "ionicons": "^7.1.0",
     "localforage-cordovasqlitedriver": "^1.8.0",
     "react": "^18.2.0",
