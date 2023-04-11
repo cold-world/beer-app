@@ -1,28 +1,23 @@
-Beer App.
-=======================================
+# Beer App.
 
-React, Typescript, Ionic, Capacitor. 
+React, Typescript, Ionic, Capacitor.
 
 Main goal -> build native android app.
 
-Features -> 
+Features ->
 
 1. Get / render data from API.
 2. Add / remove from bookmarks.
 3. Bookmarks stored in local storage, indexedDB, and native storage.
 4. App works as web app as well.
 
+---
 
-* * *
 ### [Demo](https://cold-world.github.io/beer-app/)
 
 ![Alt Text](https://i.ibb.co/74GMmpQ/2.gif)
-![Alt Text](https://i.ibb.co/3S8Gm4X/Screenshot-2023-04-11-183641.jpg)
-![Alt Text](https://i.ibb.co/z5HzzTT/Screenshot-2023-04-11-183545.jpg)
 
-* * *
-
-
+---
 
 ### A piece of code
 
@@ -53,12 +48,12 @@ export function useStorage() {
 
 ### Download & Installation
 
-```shell 
+```shell
 git clone https://github.com/cold-world/beer-app
 cd <project-dir>
 yarn install
 yarn run build
-yarn run dev 
+yarn run dev
 
 //android-debug.apk
 npx cap add android
