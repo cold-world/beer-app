@@ -1,9 +1,11 @@
-import { Banner, Button, Header, Spinner, Toast } from '../../components';
+import { Banner, Button, Header, Spinner } from '../../components';
 import { useStorage } from '../../hooks/useStorage';
 import useFetchBeers from '../../hooks/useFetchBeers';
 import { useNavigate } from 'react-router-dom';
 
 import './about.css';
+import useToast from '../../hooks/useToast';
+import { IBeer } from '../../types';
 
 function About() {
   const { beer, status } = useFetchBeers();
@@ -11,7 +13,13 @@ function About() {
   const addDeleteHandler = beer && isBookmarked(beer?.id || 0) ? removeBookmark : addBookmark;
 
   const navigate = useNavigate();
-  const {presentToast} = Toast()
+  const { presentToast } = useToast();
+
+  const handleAddDeleteBookmark = (beer: IBeer) => {
+    addDeleteHandler(beer);
+    const toastMessage = isBookmarked(beer?.id) ? 'Bookmark Removed' : 'Bookmark Added';
+    presentToast('bottom', toastMessage);
+  };
 
   if (status === 'pending') {
     return <Spinner />;
@@ -29,7 +37,7 @@ function About() {
     <div>
       <Button onClick={() => navigate(-1)} type='back' />
       <Button
-        onClick={() => addDeleteHandler(beer!)}
+        onClick={() => handleAddDeleteBookmark(beer!)}
         type={isBookmarked(beer!?.id) ? 'remove' : 'add'}
       />
       <Banner banner='banner2' />

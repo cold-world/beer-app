@@ -1,7 +1,8 @@
-import { Storage } from '@ionic/storage';
+import { Storage, Drivers } from '@ionic/storage';
 import { useState, useEffect } from 'react';
 import { BEER_KEY } from '../config';
 import { BeerListType, IBeer } from '../types';
+import CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 
 export function useStorage() {
   const [store, setStore] = useState<Storage>();
@@ -11,11 +12,16 @@ export function useStorage() {
     const initStorage = async () => {
       const newStore = new Storage({
         name: 'beerDB',
+        driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB, Drivers.LocalStorage],
       });
+
+      await newStore.defineDriver(CordovaSQLiteDriver);
+
       const store = await newStore.create();
       setStore(store);
 
       const storedBeers = (await store.get(BEER_KEY)) || [];
+
       setBookmarks(storedBeers);
     };
     initStorage();
